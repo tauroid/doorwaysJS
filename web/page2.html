@@ -1,0 +1,34 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Page 2</title>
+    </head>
+    <body>
+        <div id="container"></div>
+        <script src="/scripts/common/jquery-2.1.4.min.js"></script>
+        <script src="/scripts/common/three.min.js"></script>
+        <script>
+            var scene1 = new THREE.Scene();
+            var scene2 = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
+
+            var renderer = new THREE.WebGLRenderer();
+            var scene1tex = new THREE.WebGLRenderTarget(window.innerHeight, window.innerHeight);
+
+            var matRed = new THREE.MeshPhongMaterial({ color: 0xff0000 });
+            var matGreen = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+            var matBlue = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+
+            var sphereRed = new THREE.Mesh(new THREE.SphereGeometry(),matRed);
+            var sphereGreen = new THREE.Mesh(new THREE.SphereGeometry(),matGreen);
+            var sphereBlue = new THREE.Mesh(new THREE.SphereGeometry(),matBlue);
+
+            sphereRed.position.set(-100,0,0);
+            sphereGreen.position.set(0,0,0);
+            sphereBlue.position.set(100,0,0);
+
+            camera.position.set(0,0,-200);
+        </script>
+    </body>
+</html>
+
